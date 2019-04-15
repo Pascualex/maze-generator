@@ -9,7 +9,7 @@ The most relevant characteristics of the application are:
 * It's based on the MVC architecture.
 * The logic of the maze runs in its own thread.
 
-## The algorithms used for building and solving the maze
+## Algorithms used for building and solving the maze
 
 The algorithm used for building the maze is based on the depth-first search algorithm but, instead of using a stack, the tiles store all the necessary information.
 
