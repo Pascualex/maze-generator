@@ -77,16 +77,16 @@ public class Maze {
      */
     public void step() {
         if (firstBuildStep) firstBuildStep = false;
-        else if (!mazeFinished) buildStep();
+        else if (!mazeFinished) buildingStep();
         else if (firstSolveStep) findSolution();
-        else if (!solutionFinished) solveStep();
+        else if (!solutionFinished) solvingStep();
     }
 
     /**
      * Based on the state of the current tile and its neighbours, advances one step in the building
      * process, updating the flags when needed.
      */
-    private void buildStep() {
+    private void buildingStep() {
         // Gets the current tile
         Tile tile = tiles[y][x];
 
@@ -191,7 +191,7 @@ public class Maze {
     /**
      * Based on the state of the solution stack, advances one step in the solving process.
      */
-    private void solveStep() {
+    private void solvingStep() {
         // If the solution is empty, builds the exit and finishes the solution
         if (solution.empty()) {
             if (!solutionExitBuilt) solutionExitBuilt = true;
