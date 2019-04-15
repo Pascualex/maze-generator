@@ -15,4 +15,4 @@ The algorithm used for building the maze is based on the depth-first search algo
 
 The "solving" process isn't made by an algorithm, instead the solution is obtained from the information stored in the tiles.
 
-![alt text](relative/capture.jpg?raw=true "Capture of the maze generator application")
+![alt text](screenshot.jpg "Screenshot of the maze generator application")
