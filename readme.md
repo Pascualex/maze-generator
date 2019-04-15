@@ -17,4 +17,4 @@ The "solving" process isn't made by an algorithm, instead the solution is obtain
 
 ## Application screenshot
 
-![alt text](screenshot.jpg "Screenshot of the maze generator application")
+![alt text](screenshot.png "Screenshot of the maze generator application")
