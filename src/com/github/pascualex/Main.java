@@ -9,7 +9,7 @@ import com.github.pascualex.maze.Maze;
 public class Main {
     
     /**
-     * The main method creates the view and the controller of the app.
+     * The main method creates the maze, the view and the controller of the app.
      * @param args The arguments of the program. They will be ignored.
      */
     @SuppressWarnings("unused")

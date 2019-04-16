@@ -20,7 +20,7 @@ public class MazeAppController {
     private Point click;
     
     /**
-     * Instantiates a maze app controller, given its maze app view.
+     * Instantiates a maze app controller, given its maze and maze app view.
      * @param maze The maze of the maze app.
      * @param mazeAppView The maze app view of the maze app controller.
      */
