@@ -156,8 +156,6 @@ public class MazeController implements Runnable {
         // Repaints before pausing, since run() won't update the changes
         mazeView.repaint();
 
-        System.out.println("Pausa");
-
         // Pauses the current thread until it's interrupted.
         try {
             synchronized (Thread.currentThread()) {
@@ -166,8 +164,6 @@ public class MazeController implements Runnable {
         } catch (InterruptedException e) {
             pause = false;
         }
-
-        System.out.println("Reanuda");
     }
 
     /**

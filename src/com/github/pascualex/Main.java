@@ -1,5 +1,7 @@
 package com.github.pascualex;
 
+import com.github.pascualex.maze.Maze;
+
 /**
  * This class is the one that contains the main method and creates the maze app.
  * @author Alejandro Pascual
@@ -12,7 +14,8 @@ public class Main {
      */
     @SuppressWarnings("unused")
     public static void main(String[] args) {
-        MazeAppView mazeAppView = new MazeAppView();        
-        MazeAppController mazeAppController = new MazeAppController(mazeAppView);
+        Maze maze = new Maze();
+        MazeAppView mazeAppView = new MazeAppView(maze);        
+        MazeAppController mazeAppController = new MazeAppController(maze, mazeAppView);
     }
 }

@@ -1,5 +1,6 @@
 package com.github.pascualex;
 
+import com.github.pascualex.maze.Maze;
 import com.github.pascualex.maze.MazeView;
 
 import javax.swing.*;
@@ -29,6 +30,7 @@ public class MazeAppView extends JFrame {
     public static final int maxStepDelay = 1000;
 
     private JPanel mazePanel;
+    public MazeView mazeView;
 
     private JPanel sidePanel;
     private JLabel tileSideLabel;
@@ -42,9 +44,10 @@ public class MazeAppView extends JFrame {
     public JButton cancelButton;
 
     /**
-     * Instantiates a maze app view.
+     * Instantiates a maze app view, given its maze.
+     * @param maze The maze of the maze app.
      */
-    public MazeAppView() {
+    public MazeAppView(Maze maze) {
         super("Maze generator");
         setVisible(false);
         
@@ -62,6 +65,12 @@ public class MazeAppView extends JFrame {
         mazePanel.setBackground(primaryColor);
         mazePanel.setLayout(null);
         add(mazePanel);
+
+        // Sets up the maze view
+        mazeView = new MazeView(maze, primaryColor, tertiaryColor, focusColor);
+        mazeView.setBounds(50, 50, 750, 750);
+        mazeView.setBackground(primaryColor);
+        mazePanel.add(mazeView);
         
         // Sets up the side panel
         sidePanel = new JPanel();
@@ -163,15 +172,5 @@ public class MazeAppView extends JFrame {
 
         // Makes the frame visible after everything is loaded
         setVisible(true);
-    }
-
-    /**
-     * Adds a maze view to the maze app view and sets it up.
-     * @param mazeView The maze view of the maze app view.
-     */
-    public void addMazeView(MazeView mazeView) {
-        mazeView.setBounds(50, 50, 750, 750);
-        mazeView.setBackground(primaryColor);
-        mazePanel.add(mazeView);
     }
 }

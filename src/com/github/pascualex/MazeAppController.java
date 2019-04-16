@@ -1,7 +1,6 @@
 package com.github.pascualex;
 
 import com.github.pascualex.maze.Maze;
-import com.github.pascualex.maze.MazeView;
 import com.github.pascualex.maze.MazeController;
 
 import javax.swing.JFrame;
@@ -22,19 +21,12 @@ public class MazeAppController {
     
     /**
      * Instantiates a maze app controller, given its maze app view.
+     * @param maze The maze of the maze app.
      * @param mazeAppView The maze app view of the maze app controller.
      */
-    public MazeAppController(MazeAppView mazeAppView) {
-        // Creates the maze and the maze view
-        Maze maze = new Maze();
-        MazeView mazeView = new MazeView(maze, MazeAppView.primaryColor, MazeAppView.tertiaryColor,
-                                         MazeAppView.focusColor);
-
-        // Adds the maze view to the maze app view
-        mazeAppView.addMazeView(mazeView);
-
+    public MazeAppController(Maze maze, MazeAppView mazeAppView) {
         // Creates the maze controller and the maze thread
-        MazeController mazeController = new MazeController(maze, mazeView);
+        MazeController mazeController = new MazeController(maze, mazeAppView.mazeView);
         Thread mazeThread = new Thread(mazeController);
         mazeThread.start();
 
@@ -53,10 +45,10 @@ public class MazeAppController {
                 if (!e.isMetaDown()) {
                     // Checks if the cursor is inside the draggable bar
                     if (click.y < 50) {
-                        Point p = mazeView.getLocation();
+                        Point p = mazeAppView.mazeView.getLocation();
                         int x = p.x+e.getX()-click.x;
                         int y = p.y+e.getY()-click.y;
-                        mazeView.setLocation(x, y);
+                        mazeAppView.mazeView.setLocation(x, y);
                     }
                 }
             }
