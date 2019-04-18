@@ -45,10 +45,11 @@ public class MazeAppController {
                 if (!e.isMetaDown()) {
                     // Checks if the cursor is inside the draggable bar
                     if (click.y < 50) {
-                        Point p = mazeAppView.mazeView.getLocation();
+                        // Moves the window with the cursor
+                        Point p = mazeAppView.getLocation();
                         int x = p.x+e.getX()-click.x;
                         int y = p.y+e.getY()-click.y;
-                        mazeAppView.mazeView.setLocation(x, y);
+                        mazeAppView.setLocation(x, y);
                     }
                 }
             }
