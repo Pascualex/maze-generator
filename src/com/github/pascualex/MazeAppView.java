@@ -2,6 +2,7 @@ package com.github.pascualex;
 
 import com.github.pascualex.maze.Maze;
 import com.github.pascualex.maze.MazeView;
+import com.github.pascualex.swing.JCustomButton;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -37,11 +38,11 @@ public class MazeAppView extends JFrame {
     public JTextField tileSideInput;
     private JLabel stepDelayLabel;
     public JTextField stepDelayInput;
-    public JButton minimizeButton;
-    public JButton closeButton;    
-    public JButton generateButton;
-    public JButton solveButton;
-    public JButton cancelButton;
+    public JCustomButton minimizeButton;
+    public JCustomButton closeButton;    
+    public JCustomButton generateButton;
+    public JCustomButton solveButton;
+    public JCustomButton cancelButton;
 
     /**
      * Instantiates a maze app view, given its maze.
@@ -80,25 +81,23 @@ public class MazeAppView extends JFrame {
         add(sidePanel);
 
         // Sets up the minimize button
-        minimizeButton = new JButton("\uFF0D");
+        minimizeButton = new JCustomButton("\uFF0D");
         minimizeButton.setBounds(1080, 0, 60, 50);
         minimizeButton.setFont(new Font("Helvetica", Font.PLAIN, 24));
         minimizeButton.setMargin(new Insets(0, 0, 0, 0));
         minimizeButton.setForeground(textColor);
         minimizeButton.setBackground(secondaryColor);
-        minimizeButton.setBorderPainted(false);
-        minimizeButton.setFocusPainted(false);
+        minimizeButton.setHoveredColor(secondaryColor.brighter().brighter().brighter());
         sidePanel.add(minimizeButton);
 
         // Sets up the close button
-        closeButton = new JButton("\u2715");
+        closeButton = new JCustomButton("\u2715");
         closeButton.setBounds(1140, 0, 60, 50);
         closeButton.setFont(new Font("Helvetica", Font.PLAIN, 22));
         closeButton.setMargin(new Insets(0, 0, 0, 0));
         closeButton.setForeground(textColor);
         closeButton.setBackground(secondaryColor);
-        closeButton.setBorderPainted(false);
-        closeButton.setFocusPainted(false);
+        closeButton.setHoveredColor(errorColor);
         sidePanel.add(closeButton);
 
         // Sets up the border of the inputs
@@ -141,33 +140,30 @@ public class MazeAppView extends JFrame {
         sidePanel.add(stepDelayInput);
 
         // Sets up the generate button
-        generateButton = new JButton("GENERATE");
+        generateButton = new JCustomButton("GENERATE");
         generateButton.setBounds(870, 650, 310, 80);
         generateButton.setFont(new Font("Helvetica", Font.BOLD, 35));
         generateButton.setForeground(secondaryColor);   
         generateButton.setBackground(tertiaryColor);
-        generateButton.setBorderPainted(false);
-        generateButton.setFocusPainted(false);
+        generateButton.setHoveredColor(tertiaryColor.brighter().brighter().brighter());
         sidePanel.add(generateButton);
 
         // Sets up the solve button
-        solveButton = new JButton("SOLVE");
+        solveButton = new JCustomButton("SOLVE");
         solveButton.setBounds(870, 750, 210, 80);
         solveButton.setFont(new Font("Helvetica", Font.BOLD, 35));
         solveButton.setForeground(secondaryColor);   
         solveButton.setBackground(tertiaryColor);
-        solveButton.setBorderPainted(false);
-        solveButton.setFocusPainted(false);
+        solveButton.setHoveredColor(tertiaryColor.brighter().brighter().brighter());
         sidePanel.add(solveButton);
 
         // Sets up the cancel button
-        cancelButton = new JButton("\u2715");
+        cancelButton = new JCustomButton("\u2715");
         cancelButton.setBounds(1100, 750, 80, 80);
         cancelButton.setFont(new Font("Helvetica", Font.BOLD, 40));
         cancelButton.setForeground(secondaryColor);   
         cancelButton.setBackground(tertiaryColor);
-        cancelButton.setBorderPainted(false);
-        cancelButton.setFocusPainted(false);
+        cancelButton.setHoveredColor(tertiaryColor.brighter().brighter().brighter());
         sidePanel.add(cancelButton);
 
         // Makes the frame visible after everything is loaded
