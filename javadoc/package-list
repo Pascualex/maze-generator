@@ -1,4 +1,4 @@
-com.github.pascualex
-com.github.pascualex.maze
-com.github.pascualex.maze.components
-com.github.pascualex.swing
+com.github.pascualex.mazegenerator
+com.github.pascualex.mazegenerator.maze
+com.github.pascualex.mazegenerator.maze.components
+com.github.pascualex.mazegenerator.swing
