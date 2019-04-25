@@ -67,8 +67,12 @@ public class MazeController implements Runnable {
         // Runs while the finish flag is false
         while (!finish) {
             // Checks if the thread has to pause and if the maze has to restart
-            if (pause) pauseThread();
-            if (restart) restartMaze();
+            if (pause) {
+                pauseThread();
+                continue;
+            } else if (restart) {
+                restartMaze();
+            }
 
             // Advances one step in the current phase of the maze
             maze.step();
