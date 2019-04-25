@@ -17,7 +17,6 @@ import java.awt.event.MouseMotionAdapter;
  * @author Alejandro Pascual
  */
 public class MazeAppController {
-    private Point click;
     
     /**
      * Instantiates a maze app controller, given its maze and maze app view.
@@ -31,7 +30,7 @@ public class MazeAppController {
         mazeThread.start();
 
         // Sets up the draggable bar of the maze app
-        click = new Point();
+        Point click = new Point();
         mazeAppView.addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
                 if (!e.isMetaDown()) {
