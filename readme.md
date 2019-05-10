@@ -1,6 +1,6 @@
 # Maze generator
 
-A personal project made to practice with Swing and multi-thread applications in Java (and because seeing the building and solving proccess of a maze is very relaxing).
+A personal project made to practice with Swing and multi-thread applications in Java (and because seeing the building and solving proccess of a maze is very relaxing). The application can be downloaded [here](https://github.com/pascualex/maze-generator/releases).
 
 ## Characteristics of the application
 
